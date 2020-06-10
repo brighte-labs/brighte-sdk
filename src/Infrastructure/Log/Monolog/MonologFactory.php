@@ -74,7 +74,9 @@ class MonologFactory
             $logger->pushProcessor(new IntrospectionProcessor);
         }
 
-        $logger->pushHandler(new StreamHandler($config->getPath(), $config->getLevel()));
+        $stream = new StreamHandler($config->getPath(), $config->getLevel());
+        $stream->setFormatter(new \Monolog\Formatter\JsonFormatter());
+        $logger->pushHandler($stream);
 
         return $logger;
     }//end create()
