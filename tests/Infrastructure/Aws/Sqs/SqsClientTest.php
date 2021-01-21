@@ -2,9 +2,9 @@
 namespace Brighte\Test\Infrastructure\Aws\Sqs;
 use Brighte\Infrastructure\Aws\Sqs\SqsClient;
 use Brighte\Infrastructure\Aws\Sqs\SqsClientFactory;
-use Brighte\Sqs\SqsProducer;
-use Brighte\Sqs\SqsConsumer;
-use Brighte\Sqs\SqsMessage;
+use Enqueue\Sqs\SqsProducer;
+use Enqueue\Sqs\SqsConsumer;
+use Enqueue\Sqs\SqsMessage;
 use PHPUnit\Framework\TestCase;
 
 class SqsClientTest extends TestCase

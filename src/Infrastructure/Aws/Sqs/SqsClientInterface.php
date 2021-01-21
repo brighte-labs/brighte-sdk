@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace Brighte\Infrastructure\Aws\Sqs;
 
-use Brighte\Sqs\SqsMessage;
+use Enqueue\Sqs\SqsMessage;
 
 interface SqsClientInterface
 {
@@ -18,18 +18,18 @@ interface SqsClientInterface
     public function publish(string $body, string $groupId, array $properties = []);
 
     /**
-     * @return \Brighte\Sqs\SqsMessage|mixed
+     * @return \Enqueue\Sqs\SqsMessage|mixed
      */
     public function receive();
 
     /**
-     * @param \Brighte\Sqs\SqsMessage|null $message
+     * @param \Enqueue\Sqs\SqsMessage|null $message
      * @return mixed
      */
     public function acknowledge(SqsMessage $message = null);
 
     /**
-     * @param \Brighte\Sqs\SqsMessage|null $message
+     * @param \Enqueue\Sqs\SqsMessage|null $message
      * @param bool $requeue
      * @return mixed
      */
