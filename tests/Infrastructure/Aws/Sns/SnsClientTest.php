@@ -3,11 +3,10 @@ namespace Brighte\Test\Infrastructure\Aws\Sns;
 
 use Brighte\Infrastructure\Aws\Sns\SnsClientFactory;
 use Brighte\Infrastructure\Aws\Sns\SnsConfig;
-use Brighte\Sns\SnsProducer;
-use Brighte\Sns\SnsConnectionFactory;
-use Brighte\Sns\SnsContext;
+use Enqueue\Sns\SnsProducer;
+use Enqueue\Sns\SnsConnectionFactory;
+use Enqueue\Sns\SnsContext;
 use PHPUnit\Framework\TestCase;
-use ReflectionClass;
 
 class SnsClientTest extends TestCase
 {
@@ -16,9 +15,6 @@ class SnsClientTest extends TestCase
 
     /** @var $snsClientFactory SnsClientFactory*/
     private $snsClientFactory;
-
-    /** @var $snsClient SnsClient*/
-    private $snsClient;
 
     /**
      * @var \PHPUnit\Framework\MockObject\MockObject
@@ -29,6 +25,10 @@ class SnsClientTest extends TestCase
      * @var \PHPUnit\Framework\MockObject\MockObject
      */
     private $snsContextMock;
+    /**
+     * @var \Brighte\Infrastructure\Aws\Sns\SnsClientInterface
+     */
+    private $snsClient;
 
     public function setUp()
     {

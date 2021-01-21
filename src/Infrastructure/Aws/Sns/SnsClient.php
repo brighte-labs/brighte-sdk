@@ -2,8 +2,8 @@
 
 namespace Brighte\Infrastructure\Aws\Sns;
 
-use Brighte\Sns\SnsConnectionFactory;
-use Brighte\Sns\SnsContext;
+use Enqueue\Sns\SnsConnectionFactory;
+use Enqueue\Sns\SnsContext;
 
 class SnsClient implements SnsClientInterface
 {
@@ -11,10 +11,10 @@ class SnsClient implements SnsClientInterface
     /** @var \Brighte\Infrastructure\Aws\Sns\SnsConfig */
     protected $config;
 
-    /** @var \Brighte\Sns\SnsConnectionFactory */
+    /** @var \Enqueue\Sns\SnsConnectionFactory */
     protected $factory;
 
-    /** @var \Brighte\Sns\SnsContext */
+    /** @var \Enqueue\Sns\SnsContext */
     protected $context;
 
     /**
@@ -32,8 +32,8 @@ class SnsClient implements SnsClientInterface
     /**
      * @param string $topicName topic name
      * @param string $body message body
-     * @param array $properties messqage properties
-     * @return \Brighte\Sns\SnsMessage|\Interop\Queue\Message|mixed
+     * @param array $properties message properties
+     * @return \Enqueue\Sns\SnsMessage|\Interop\Queue\Message
      * @throws \Interop\Queue\Exception
      * @throws \Interop\Queue\Exception\InvalidDestinationException
      * @throws \Interop\Queue\Exception\InvalidMessageException
@@ -69,7 +69,7 @@ class SnsClient implements SnsClientInterface
     }
 
     /**
-     * @return \Brighte\Sns\SnsConnectionFactory
+     * @return \Enqueue\Sns\SnsConnectionFactory
      */
     public function getFactory(): SnsConnectionFactory
     {
@@ -77,7 +77,7 @@ class SnsClient implements SnsClientInterface
     }
 
     /**
-     * @param \Brighte\Sns\SnsConnectionFactory $factory
+     * @param \Enqueue\Sns\SnsConnectionFactory $factory
      * @return SnsClient
      */
     public function setFactory(SnsConnectionFactory $factory): SnsClient
@@ -88,7 +88,7 @@ class SnsClient implements SnsClientInterface
     }
 
     /**
-     * @return \Brighte\Sns\SnsContext
+     * @return \Enqueue\Sns\SnsContext
      */
     public function getContext(): SnsContext
     {
@@ -96,7 +96,7 @@ class SnsClient implements SnsClientInterface
     }
 
     /**
-     * @param \Brighte\Sns\SnsContext $context
+     * @param \Enqueue\Sns\SnsContext $context
      * @return SnsClient
      */
     public function setContext(SnsContext $context): SnsClient

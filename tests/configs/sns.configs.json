@@ -2,11 +2,11 @@
   "sns.ms.crm": {
     "key": "CRM_AWS_KEY",
     "secret": "CRM_AWS_SECRET",
-    "region": "CRM_AWS_REGION"
+    "region": "ap-southeast-2"
   },
   "sns.portal": {
     "key": "PORTAL_AWS_KEY",
     "secret": "PORTAL_AWS_SECRET",
-    "region": "PORTAL_AWS_REGION"
+    "region": "ap-southeast-2"
   }
 }
