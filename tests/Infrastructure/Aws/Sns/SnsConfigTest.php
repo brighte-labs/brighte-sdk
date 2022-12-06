@@ -19,7 +19,7 @@ class SnsConfigTest extends TestCase
     /** @var $config \Brighte\Infrastructure\Aws\Sns\SnsConfig*/
     private $config;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 

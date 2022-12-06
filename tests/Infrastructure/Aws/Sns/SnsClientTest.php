@@ -30,7 +30,7 @@ class SnsClientTest extends TestCase
      */
     private $snsClient;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -41,7 +41,6 @@ class SnsClientTest extends TestCase
         $this->putEnvVariables();
 
         $this->snsProducerMock = $this->createMock(SnsProducer::class);
-        $this->snsProducerMock->method('send')->willReturn('MessageId');
         $this->snsClientFactory = new SnsClientFactory($this->snsConfigSettings);
         $this->snsClient = $this->snsClientFactory->create('sns.ms.crm');
 
@@ -101,7 +100,7 @@ class SnsClientTest extends TestCase
         try {
             $this->snsClient->send($topic, $body, $properties);
         } catch (\Exception $exception) {
-            $this->assertContains('Error executing "CreateTopic"', $exception->getMessage());
+            $this->assertStringContainsString('Error executing "CreateTopic"', $exception->getMessage());
         }
     }
 

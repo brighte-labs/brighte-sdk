@@ -14,7 +14,7 @@ class SqsDoctrineConfigFactoryTest extends TestCase
     /** @var $doctrineConfigFactory doctrineConfigFactory*/
     private $doctrineConfigFactory;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->connectionName = 'doctrine.ms.crm';

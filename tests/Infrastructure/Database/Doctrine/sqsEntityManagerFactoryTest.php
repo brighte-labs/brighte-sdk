@@ -15,7 +15,7 @@ class SqsEntityManagerTest extends TestCase
     /** @var $config EntityManagerFactory*/
     private $config;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->connectionName = 'doctrine.ms.crm';

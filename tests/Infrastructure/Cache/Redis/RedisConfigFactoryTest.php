@@ -19,7 +19,7 @@ class RedisConfigFactoryTest extends TestCase
     /** @var \stdClass */
     protected $configContents;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $testDir = dirname(dirname(__FILE__));
@@ -37,7 +37,7 @@ class RedisConfigFactoryTest extends TestCase
         putenv("REDIS_PORT=REDIS_PORT");
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         putenv("REDIS_SCHEME");
         putenv("REDIS_HOST");
@@ -71,7 +71,7 @@ class RedisConfigFactoryTest extends TestCase
         try {
             $class->get(null);
         } catch (RedisConfigException $exception) {
-            $this->assertContains('Unknown connection name', $exception->getMessage());
+            $this->assertStringContainsString('Unknown connection name', $exception->getMessage());
         }
 
         $testRedisConfig = $class->get('redis.ms.crm');

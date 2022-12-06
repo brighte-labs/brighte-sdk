@@ -14,7 +14,7 @@ class RedisConfigTest extends TestCase
     /** @var Array */
     protected $configArr;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->configArr = [
@@ -25,7 +25,7 @@ class RedisConfigTest extends TestCase
         $this->redisConfig = new RedisConfig($this->configArr);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         unset($this->redisConfig);
         parent::tearDown();

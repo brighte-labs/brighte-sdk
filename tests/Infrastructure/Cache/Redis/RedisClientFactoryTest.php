@@ -14,7 +14,7 @@ class RedisClientFactoryTest extends TestCase
     /** @var $redis RedisClientFactory*/
     private $redis;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $testDir = dirname(dirname(__FILE__));
@@ -29,7 +29,7 @@ class RedisClientFactoryTest extends TestCase
         putenv("REDIS_PORT=REDIS_PORT");
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         putenv("REDIS_SCHEME");
         putenv("REDIS_HOST");

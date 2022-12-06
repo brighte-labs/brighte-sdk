@@ -20,7 +20,7 @@ class SqsConfigTest extends TestCase
     /** @var $config \Brighte\Infrastructure\Aws\Sqs\SqsConfig*/
     private $config;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 

@@ -26,7 +26,7 @@ class AuthTest extends TestCase
      *
      * @return void
      */
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->auth = $this->createPartialMock(Auth::class, []);
@@ -41,7 +41,7 @@ class AuthTest extends TestCase
      *
      * @return void
      */
-    public function tearDown()
+    public function tearDown(): void
     {
         unset($this->auth);
         parent::tearDown();
@@ -74,7 +74,7 @@ class AuthTest extends TestCase
         try {
             $this->auth->requestToken();
         } catch (IdentityException $exception) {
-            $this->assertContains('Invalid API endpoint.', $exception->getMessage());
+            $this->assertStringContainsString('Invalid API endpoint.', $exception->getMessage());
         }
 
         $this->auth->setApiEndpoint('test_end_point');
@@ -90,7 +90,7 @@ class AuthTest extends TestCase
         try {
             $this->auth->requestToken();
         } catch (IdentityException $exception) {
-            $this->assertContains('Failed to request token, please check your key. Error: test error', $exception->getMessage());
+            $this->assertStringContainsString('Failed to request token, please check your key. Error: test error', $exception->getMessage());
         }
     }
 
@@ -101,7 +101,7 @@ class AuthTest extends TestCase
         try {
             $this->auth->authenticate();
         } catch (IdentityException $exception) {
-            $this->assertContains('Please check jwt secret, algorithm', $exception->getMessage());
+            $this->assertStringContainsString('Please check jwt secret, algorithm', $exception->getMessage());
         }
 
         $this->auth->setApiEndpoint('test_end_point');
@@ -116,7 +116,7 @@ class AuthTest extends TestCase
         try {
             $this->auth->authenticate('xxxxx');
         } catch (IdentityException $exception) {
-            $this->assertContains('Failed to authenticate token. Error: Wrong number of segments', $exception->getMessage());
+            $this->assertStringContainsString('Failed to authenticate token. Error: Wrong number of segments', $exception->getMessage());
         }
 
         $this->assertEquals($this->jwtPayload, $this->auth->authenticate($testToken));
@@ -127,7 +127,7 @@ class AuthTest extends TestCase
         try {
             $this->auth->authorize();
         } catch (IdentityException $exception) {
-            $this->assertContains('Invalid JWT token', $exception->getMessage());
+            $this->assertStringContainsString('Invalid JWT token', $exception->getMessage());
         }
 
         $this->assertEquals(true, $this->auth->authorize($this->jwtPayload));

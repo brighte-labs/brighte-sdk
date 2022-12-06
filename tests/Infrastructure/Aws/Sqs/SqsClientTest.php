@@ -39,7 +39,7 @@ class SqsClientTest extends TestCase
      */
     private $sqsMessageMock;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -53,7 +53,6 @@ class SqsClientTest extends TestCase
         $this->sqsClientMock = $this->createMock(get_class($this->sqsClient));
         $this->sqsClientMock->method('publish')->willReturn($this->sampleMessage);
         $this->sqsProducerMock = $this->createMock(SqsProducer::class);
-        $this->sqsProducerMock->method('send')->willReturn('MessageId');
         $this->sqsConsumerMock = $this->createMock(SqsConsumer::class);
         $this->sqsMessageMock = $this->createMock(SqsMessage::class);
         $context = $this->sqsClient->getContext();
