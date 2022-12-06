@@ -14,11 +14,11 @@
     }
   ],
   "require": {
-    "php": "^7.1",
+    "php": "^7.1|^8.1",
     "enqueue/sqs": "^0.10",
     "enqueue/sns": "^0.10",
     "aws/aws-sdk-php": "^3.171",
-    "brightecapital/service-schema": "^1.9",
+    "brightecapital/service-schema": "^1.10",
     "doctrine/orm": "^2.5",
     "predis/predis": "^1.1",
     "guzzlehttp/guzzle": "^6.3",
