@@ -21,7 +21,7 @@
     "brightecapital/service-schema": "^1.10",
     "doctrine/orm": "^2.5",
     "predis/predis": "^1.1",
-    "guzzlehttp/guzzle": "^6.3",
+    "guzzlehttp/guzzle": "^6.5.4",
     "firebase/php-jwt": "^5.0"
   },
   "require-dev": {
